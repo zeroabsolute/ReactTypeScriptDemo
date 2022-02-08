@@ -1,8 +1,12 @@
 import { ReactElement } from 'react';
 import { Button } from 'antd';
+import { useTranslation } from 'react-i18next';
+
 import './App.css';
 
 const App = (): ReactElement => {
+  const { t } = useTranslation();
+
   const onButtonClick = (): void => {
     console.log('Cliked');
   };
@@ -14,7 +18,7 @@ const App = (): ReactElement => {
         type="default"
         danger
       >
-        Click me!
+        {t('globals:save')}
       </Button>
     </div>
   );
