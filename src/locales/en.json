@@ -1,5 +1,7 @@
 {
   "globals": {
-    "save": "Save"
+    "save": "Save",
+    "english": "English",
+    "albanian": "Albanian"
   }
 }
