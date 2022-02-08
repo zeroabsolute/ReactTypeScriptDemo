@@ -1,0 +1,9 @@
+@import './styles/abstracts/variables.scss';
+
+.App {
+  .Temp {
+    font-family: $primary-black;
+    font-size: 1000%;
+    color: $danger;
+  }
+}
