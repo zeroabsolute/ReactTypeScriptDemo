@@ -12,7 +12,7 @@ import LogInPage from '../routes/auth/LogIn';
 import LogOutPage from '../routes/auth/LogOut';
 import AccountsPage from '../routes/app/Accounts';
 import SettingsPage from '../routes/app/Settings';
-import NotFoundPage from '../routes/404';
+import NotFoundPage from '../routes/not_found';
 import routes from '../../constants/routes';
 
 const App = (): ReactElement => {

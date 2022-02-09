@@ -2,7 +2,9 @@
   "globals": {
     "save": "Save",
     "english": "English",
-    "albanian": "Albanian"
+    "albanian": "Albanian",
+    "inputPlaceholder": "Type something...",
+    "required": "Field is requried"
   },
   "routes": {
     "logIn": "Log In",
@@ -13,5 +15,13 @@
   "notFound": {
     "pageNotFound": "The requested page was not found",
     "goBack": "Click here to go back"
+  },
+  "auth": {
+    "email": "Email",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password...",
+    "logIn": "Log In",
+    "invalidEmail": "Invalid email",
+    "invalidPassword": "Invalid password"
   }
 }
