@@ -1,15 +1,15 @@
 import { ReactElement } from 'react';
 import { Button } from 'antd';
-import { useTranslation } from 'react-i18next';
 import { useSelector, useDispatch } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
-import { RootState } from './redux/store';
-import locales from './constants/locales';
-import selectLanguage from './redux/modules/locales/actions';
-import * as localizationTypes from './redux/modules/locales/types';
-import classes from './App.module.scss';
+import { RootState } from '../../../../redux/store';
+import locales from '../../../../constants/locales';
+import selectLanguage from '../../../../redux/modules/locales/actions';
+import * as localizationTypes from '../../../../redux/modules/locales/types';
+import classes from './index.module.scss';
 
-const App = (): ReactElement => {
+function Settings(): ReactElement {
   const { t, i18n } = useTranslation();
   const localizationState: localizationTypes.switchLanguageState = useSelector(
     (state: RootState) => state.localization,
@@ -22,8 +22,8 @@ const App = (): ReactElement => {
   };
 
   return (
-    <div className={classes.App}>
-      <div className={classes.Temp}>Test</div>
+    <div className={classes.SettingsContainer}>
+      Settings Page
       <Button
         disabled={localizationState.selectedLanguage === locales.ALBANIAN}
         onClick={() => onButtonClick(locales.ALBANIAN)}
@@ -41,6 +41,6 @@ const App = (): ReactElement => {
       </Button>
     </div>
   );
-};
+}
 
-export default App;
+export default Settings;

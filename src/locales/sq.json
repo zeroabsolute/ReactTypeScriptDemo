@@ -3,5 +3,15 @@
     "save": "Ruaj",
     "english": "Anglisht",
     "albanian": "Shqip"
+  },
+  "routes": {
+    "logIn": "Hyr",
+    "logOut": "Dil",
+    "accounts": "Llogaritë",
+    "settings": "Opsionet"
+  },
+  "notFound": {
+    "pageNotFound": "Faqja që kërkuat nuk u gjet",
+    "goBack": "Klikoni këtu për tu kthyer mbrapa"
   }
 }

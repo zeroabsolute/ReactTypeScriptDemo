@@ -3,5 +3,15 @@
     "save": "Save",
     "english": "English",
     "albanian": "Albanian"
+  },
+  "routes": {
+    "logIn": "Log In",
+    "logOut": "Log Out",
+    "accounts": "Accounts",
+    "settings": "Settings"
+  },
+  "notFound": {
+    "pageNotFound": "The requested page was not found",
+    "goBack": "Click here to go back"
   }
 }
