@@ -9,7 +9,7 @@
   "routes": {
     "logIn": "Log In",
     "logOut": "Log Out",
-    "accounts": "Accounts",
+    "authors": "Authors",
     "settings": "Settings"
   },
   "notFound": {

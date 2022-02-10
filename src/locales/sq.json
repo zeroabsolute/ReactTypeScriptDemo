@@ -8,7 +8,7 @@
   "routes": {
     "logIn": "Hyr",
     "logOut": "Dil",
-    "accounts": "Llogaritë",
+    "authors": "Llogaritë",
     "settings": "Opsionet"
   },
   "notFound": {
