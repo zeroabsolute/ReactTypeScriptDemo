@@ -8,6 +8,7 @@ type CustomButtonProps = {
   type: 'link' | 'text' | 'ghost' | 'default' | 'primary' | 'dashed' | undefined,
   onClick?: () => void,
   label: string,
+  loading?: boolean,
 };
 
 function CustomButton(props: CustomButtonProps): ReactElement {
@@ -17,6 +18,7 @@ function CustomButton(props: CustomButtonProps): ReactElement {
       htmlType={props.htmlType}
       type={props.type}
       onClick={props.onClick}
+      loading={props.loading}
     >
       {props.label}
     </Button>
@@ -26,6 +28,7 @@ function CustomButton(props: CustomButtonProps): ReactElement {
 CustomButton.defaultProps = {
   htmlType: undefined,
   onClick: undefined,
+  loading: false,
 };
 
 export default CustomButton;

@@ -5,17 +5,20 @@ import {
   Formik,
   Field,
   Form,
-  // FormikHelpers,
 } from 'formik';
+import { useSelector, useDispatch } from 'react-redux';
 
 import * as types from './types';
 import classes from './index.module.scss';
 import Button from '../../../common/Button';
 import { colors } from '../../../../styles/abstracts/variables';
-import { logIn } from './api';
+import { logIn } from './action_creators';
+import { RootState } from '../../../../redux/store';
 
 function LogIn(): ReactElement {
   const { t } = useTranslation();
+  const authState = useSelector((state: RootState) => state.auth);
+  const dispatch = useDispatch();
   const initialValues: types.LogInFormValues = {
     email: '',
     password: '',
@@ -34,11 +37,10 @@ function LogIn(): ReactElement {
       .required(t('globals:required')),
   });
   const onSubmit = async (values: types.LogInFormValues): Promise<void> => {
-    const result = await logIn({
+    dispatch(logIn({
       email: values.email,
       password: values.password,
-    });
-    console.log('\n\n\n-----> ', result);
+    }));
   };
 
   return (
@@ -73,7 +75,9 @@ function LogIn(): ReactElement {
               htmlType="submit"
               label={t('auth:logIn')}
               type="default"
+              loading={authState.isLoggingIn}
             />
+            <div className={classes.Error}>{authState.error}</div>
           </Form>
         )}
       </Formik>

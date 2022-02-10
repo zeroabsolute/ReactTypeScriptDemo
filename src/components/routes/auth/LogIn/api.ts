@@ -15,6 +15,11 @@ export const logIn = async (
       password,
     }),
   });
+
+  if (!response.ok) {
+    throw new Error('Invalid email or password');
+  }
+
   return response.json();
 };
 

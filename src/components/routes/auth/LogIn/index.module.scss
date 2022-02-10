@@ -1,4 +1,7 @@
 @import "../../../../styles/abstracts/variables.scss";
 
 .LogInContainer {
+  .Error {
+    color: $danger;
+  }
 }
