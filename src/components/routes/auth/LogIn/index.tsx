@@ -12,6 +12,7 @@ import * as types from './types';
 import classes from './index.module.scss';
 import Button from '../../../common/Button';
 import { colors } from '../../../../styles/abstracts/variables';
+import { logIn } from './api';
 
 function LogIn(): ReactElement {
   const { t } = useTranslation();
@@ -32,8 +33,12 @@ function LogIn(): ReactElement {
       )
       .required(t('globals:required')),
   });
-  const onSubmit = (values: types.LogInFormValues) => {
-    console.log(values);
+  const onSubmit = async (values: types.LogInFormValues): Promise<void> => {
+    const result = await logIn({
+      email: values.email,
+      password: values.password,
+    });
+    console.log('\n\n\n-----> ', result);
   };
 
   return (
