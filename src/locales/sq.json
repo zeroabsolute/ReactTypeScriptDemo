@@ -20,6 +20,7 @@
     "password": "Fjalëkalimi",
     "logIn": "Hyr",
     "invalidEmail": "Format i gabuar email-i",
-    "invalidPassword": "Format i gabuar i fjalëkalimit"
+    "invalidPassword": "Format i gabuar i fjalëkalimit",
+    "loggingOut": "Ju lutemi prisni..."
   }
 }

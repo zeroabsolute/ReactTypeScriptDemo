@@ -41,6 +41,10 @@ const reducer = (
     return state;
   }
 
+  if (action.type === actionTypes.LOG_OUT) {
+    return initialState;
+  }
+
   return state;
 };
 

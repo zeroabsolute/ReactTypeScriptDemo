@@ -9,11 +9,11 @@ import {
 import { useSelector, useDispatch } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 
-import * as types from './types';
+import * as types from '../core/types';
 import classes from './index.module.scss';
 import Button from '../../../common/Button';
 import { colors } from '../../../../styles/abstracts/variables';
-import { logIn } from './action_creators';
+import { logIn } from '../core/action_creators';
 import { RootState } from '../../../../redux/store';
 import routes from '../../../../constants/routes';
 

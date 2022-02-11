@@ -3,7 +3,7 @@ import Axios from 'axios';
 import config from '../../../../config';
 import * as types from './types';
 
-export const logIn = async (
+const logIn = async (
   { email, password }: types.LogInFormValues,
 ): Promise<types.User> => {
   const logInUrl = `${config.API_URL}/auth/login`;
@@ -19,6 +19,4 @@ export const logIn = async (
   return response.data;
 };
 
-export const logOut = () => {
-
-};
+export default logIn;
