@@ -4,6 +4,8 @@ import * as types from './types';
 import { AppDispatch } from '../../../../redux/store';
 import * as api from './api';
 import errorParser from '../../../../utils/api_error_parser';
+import { saveItem } from '../../../../utils/storage';
+import localStorageKeys from '../../../../constants/local_storage_keys';
 
 export const logIn = (
   { email, password }: types.LogInFormValues,
@@ -19,6 +21,10 @@ export const logIn = (
       type: actionTypes.LOG_IN,
       status: actionStatuses.SUCCEEDED,
       payload: response,
+    });
+    saveItem({
+      key: localStorageKeys.USER,
+      value: response,
     });
   } catch (e: any) {
     dispatch({
