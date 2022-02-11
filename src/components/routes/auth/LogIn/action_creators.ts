@@ -3,6 +3,7 @@ import actionStatuses from '../../../../redux/constants/action_statuses';
 import * as types from './types';
 import { AppDispatch } from '../../../../redux/store';
 import * as api from './api';
+import errorParser from '../../../../utils/api_error_parser';
 
 export const logIn = (
   { email, password }: types.LogInFormValues,
@@ -23,7 +24,7 @@ export const logIn = (
     dispatch({
       type: actionTypes.LOG_IN,
       status: actionStatuses.FAILED,
-      payload: e.message,
+      payload: errorParser(e),
     });
   }
 };

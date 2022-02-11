@@ -1,3 +1,5 @@
+import Axios from 'axios';
+
 import config from '../../../../config';
 import * as types from './types';
 
@@ -5,22 +7,16 @@ export const logIn = async (
   { email, password }: types.LogInFormValues,
 ): Promise<types.User> => {
   const logInUrl = `${config.API_URL}/auth/login`;
-  const response = await fetch(logInUrl, {
+  const response = await Axios({
     headers: {
       'Content-Type': 'application/json',
     },
     method: 'POST',
-    body: JSON.stringify({
-      email,
-      password,
-    }),
+    url: logInUrl,
+    data: { email, password },
   });
 
-  if (!response.ok) {
-    throw new Error('Invalid email or password');
-  }
-
-  return response.json();
+  return response.data;
 };
 
 export const logOut = () => {
