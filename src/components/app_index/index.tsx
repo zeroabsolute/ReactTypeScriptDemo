@@ -14,6 +14,7 @@ import AuthorsPage from '../routes/app/Authors';
 import SettingsPage from '../routes/app/Settings';
 import NotFoundPage from '../routes/not_found';
 import routes from '../../constants/routes';
+import ProtectedRoute from '../common/ProtectedRoute';
 
 const App = (): ReactElement => {
   const { t } = useTranslation();
@@ -49,9 +50,18 @@ const App = (): ReactElement => {
       <Routes>
         <Route path="/" element={<Navigate to={routes.AUTHORS} replace />} />
         <Route path={routes.LOG_IN} element={<LogInPage />} />
-        <Route path={routes.LOG_OUT} element={<LogOutPage />} />
-        <Route path={routes.AUTHORS} element={<AuthorsPage />} />
-        <Route path={routes.SETTINGS} element={<SettingsPage />} />
+        <Route
+          path={routes.LOG_OUT}
+          element={<ProtectedRoute><LogOutPage /></ProtectedRoute>}
+        />
+        <Route
+          path={routes.AUTHORS}
+          element={<ProtectedRoute><AuthorsPage /></ProtectedRoute>}
+        />
+        <Route
+          path={routes.SETTINGS}
+          element={<ProtectedRoute><SettingsPage /></ProtectedRoute>}
+        />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </div>

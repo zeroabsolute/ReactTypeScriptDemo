@@ -7,6 +7,7 @@ import {
   Form,
 } from 'formik';
 import { useSelector, useDispatch } from 'react-redux';
+import { Navigate } from 'react-router-dom';
 
 import * as types from './types';
 import classes from './index.module.scss';
@@ -14,6 +15,7 @@ import Button from '../../../common/Button';
 import { colors } from '../../../../styles/abstracts/variables';
 import { logIn } from './action_creators';
 import { RootState } from '../../../../redux/store';
+import routes from '../../../../constants/routes';
 
 function LogIn(): ReactElement {
   const { t } = useTranslation();
@@ -42,6 +44,10 @@ function LogIn(): ReactElement {
       password: values.password,
     }));
   };
+
+  if (authState.user) {
+    return <Navigate to={routes.AUTHORS} replace />;
+  }
 
   return (
     <div className={classes.LogInContainer}>
