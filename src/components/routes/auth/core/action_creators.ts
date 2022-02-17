@@ -36,9 +36,9 @@ export const logIn = (
 };
 
 export const logOut = () => (dispatch: AppDispatch) => {
+  deleteItem(localStorageKeys.USER);
   dispatch({
     type: actionTypes.LOG_OUT,
     status: actionStatuses.SUCCEEDED,
   });
-  deleteItem(localStorageKeys.USER);
 };

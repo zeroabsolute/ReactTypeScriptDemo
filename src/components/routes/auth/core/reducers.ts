@@ -42,7 +42,10 @@ const reducer = (
   }
 
   if (action.type === actionTypes.LOG_OUT) {
-    return initialState;
+    return {
+      ...initialState,
+      user: undefined,
+    };
   }
 
   return state;

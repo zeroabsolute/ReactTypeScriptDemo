@@ -46,7 +46,7 @@ function LogIn(): ReactElement {
   };
 
   if (authState.user) {
-    return <Navigate to={routes.AUTHORS} replace />;
+    return <Navigate to={`${routes.APP_INDEX}/${routes.AUTHORS}`} replace />;
   }
 
   return (
