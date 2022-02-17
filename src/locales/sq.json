@@ -3,7 +3,8 @@
     "save": "Ruaj",
     "english": "Anglisht",
     "albanian": "Shqip",
-    "required": "Fushë e detyrueshme"
+    "required": "Fushë e detyrueshme",
+    "welcome": "Mirë se vjen"
   },
   "routes": {
     "logIn": "Hyr",

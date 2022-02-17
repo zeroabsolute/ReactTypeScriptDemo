@@ -1,38 +1,25 @@
 import { ReactElement } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
+import { Layout } from 'antd';
 
-import routes from '../../../../constants/routes';
+import LeftMenu from '../../../common/LeftMenu';
 import classes from './index.module.scss';
+import CustomHeader from '../../../common/Header';
+import { routeNamesMapper } from './helpers';
 
 function AppIndex(): ReactElement {
   const { t } = useTranslation();
+  const { pathname } = useLocation();
 
   return (
-    <div className={classes.AppIndex}>
-      {t('globals:albanian')}
-      <nav>
-        <Link
-          to={routes.AUTHORS}
-          key={routes.AUTHORS}
-        >
-          {t('routes:authors')}
-        </Link>
-        <Link
-          to={routes.SETTINGS}
-          key={routes.SETTINGS}
-        >
-          {t('routes:settings')}
-        </Link>
-        <Link
-          to={routes.LOG_OUT}
-          key={routes.LOG_OUT}
-        >
-          {t('routes:logOut')}
-        </Link>
-      </nav>
-      <Outlet />
-    </div>
+    <Layout className={classes.AppIndex}>
+      <LeftMenu />
+      <Layout>
+        <CustomHeader title={routeNamesMapper(t, pathname)} />
+        <Layout.Content><Outlet /></Layout.Content>
+      </Layout>
+    </Layout>
   );
 }
 

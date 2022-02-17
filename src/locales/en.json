@@ -4,7 +4,8 @@
     "english": "English",
     "albanian": "Albanian",
     "inputPlaceholder": "Type something...",
-    "required": "Field is requried"
+    "required": "Field is requried",
+    "welcome": "Welcome"
   },
   "routes": {
     "logIn": "Log In",

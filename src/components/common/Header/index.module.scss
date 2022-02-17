@@ -1,0 +1,15 @@
+@import "../../../styles/abstracts/variables.scss";
+
+.HeaderContainer {
+  display: flex;
+  color: $white;
+  height: $header-height;
+
+  .Title {
+    display: flex;
+    flex: 1;
+  }
+
+  .UserSection {
+  }
+}
